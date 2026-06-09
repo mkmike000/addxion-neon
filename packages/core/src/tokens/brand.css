@@ -1,0 +1,9 @@
+:root {
+  /* Brand overrides via [data-brand] — jeder Consumer setzt eigene Werte */
+}
+
+/* Beispiel für Kunden-Brands — keine ADDXION-Markenwerte hier */
+[data-brand="demo-warm"] {
+  --brand-color-primary: oklch(0.55 0.18 45);
+  --brand-color-primary-foreground: oklch(0.99 0 0);
+}

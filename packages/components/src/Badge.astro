@@ -1,0 +1,26 @@
+---
+const variants = {
+  default: "tw:bg-neutral-100 tw:text-text",
+  primary: "tw:bg-accent-100 tw:text-accent-800",
+  outline: "tw:border tw:border-border tw:text-text-muted tw:bg-transparent",
+} as const;
+
+interface Props {
+  variant?: keyof typeof variants;
+  class?: string;
+}
+
+const { variant = "default", class: className = "" } = Astro.props;
+
+const classes = [
+  "tw:inline-flex tw:items-center tw:px-2.5 tw:py-0.5 tw:text-sm tw:font-medium tw:rounded-full",
+  variants[variant],
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<span class={classes}>
+  <slot />
+</span>

@@ -1,0 +1,15 @@
+{
+  "name": "addxion-neon",
+  "private": true,
+  "workspaces": {
+    "packages": ["packages/*"],
+    "catalog": {
+      "tailwindcss": "^4.1.11",
+      "@tailwindcss/cli": "^4.1.11"
+    }
+  },
+  "scripts": {
+    "build": "bun --filter @addxion/core build",
+    "build:core": "bun --filter @addxion/core build"
+  }
+}
