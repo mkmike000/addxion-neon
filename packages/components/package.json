@@ -1,0 +1,16 @@
+{
+  "name": "@addxion/components",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./Button": "./src/Button.astro",
+    "./Card": "./src/Card.astro",
+    "./Container": "./src/Container.astro",
+    "./Badge": "./src/Badge.astro"
+  },
+  "dependencies": {
+    "@addxion/core": "file:../core"
+  }
+}

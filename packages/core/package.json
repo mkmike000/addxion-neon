@@ -1,0 +1,17 @@
+{
+  "name": "@addxion/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./styles": "./src/index.css",
+    "./neon.css": "./dist/neon.css"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./src/index.css -o ./dist/neon.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

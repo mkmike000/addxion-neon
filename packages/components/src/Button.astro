@@ -1,0 +1,44 @@
+---
+import { buttonSizes, buttonVariants, type ButtonSize, type ButtonVariant } from "./button.variants";
+
+interface Props {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  class?: string;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  type = "button",
+  disabled = false,
+  class: className = "",
+} = Astro.props;
+
+const classes = [
+  buttonVariants[variant],
+  buttonSizes[size],
+  "tw:focus-visible:outline-none tw:focus-visible:ring-2 tw:focus-visible:ring-primary tw:focus-visible:ring-offset-2",
+  disabled ? "tw:opacity-50 tw:pointer-events-none" : "",
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+
+---
+
+{
+  href ? (
+    <a href={href} class={classes} aria-disabled={disabled || undefined}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} disabled={disabled}>
+      <slot />
+    </button>
+  )
+}

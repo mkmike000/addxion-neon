@@ -1,0 +1,12 @@
+@import "tailwindcss" prefix(tw);
+
+/*
+ * Scan sources for utility generation.
+ * Docs with live demos live in addxion-com — sibling repo path.
+ */
+@source "../../components/**/*.{html,astro}";
+@source "../../../../addxion-com/src/**/*.{astro,tsx,mdx,md}";
+
+@import "./tokens/primitives.css";
+@import "./tokens/brand.css";
+@import "./tokens/semantic.css";
